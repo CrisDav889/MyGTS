@@ -1,0 +1,18 @@
+# ─── Seguridad para producción ───────────────────────────────
+
+# Deshabilitar el listado de directorios
+Options -Indexes
+
+# Bloquear acceso web al archivo .env (credenciales y API keys)
+<FilesMatch "^\.env">
+  Require all denied
+</FilesMatch>
+
+# Bloquear el acceso directo a carpetas sensibles
+RedirectMatch 403 ^/database(/|$)
+RedirectMatch 403 ^/backups(/|$)
+
+# Bloquear descarga de archivos de respaldo o comprimidos
+<FilesMatch "\.(rar|zip|gz|sql|bak|log)$">
+  Require all denied
+</FilesMatch>

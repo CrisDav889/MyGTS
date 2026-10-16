@@ -1,0 +1,20 @@
+.env
+dataII/.env
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# PHP dependency installs
+vendor/
